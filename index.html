@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TokoKu – Catat & Hitung Transaksi Toko</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="wrap"><a class="logo" href="#">🛒 TokoKu</a><nav><a href="#fitur">Fitur</a><a href="#cara">Cara kerja</a><a class="btn sm" href="#app">Buka Kasir</a></nav></div></header>
+
+<main class="wrap">
+<div class="hero">
+<h1>Catat transaksi toko,<br><span>hitung untung tanpa ribet.</span></h1>
+<p>Kasir online gratis untuk warung dan toko kecil. Hitung total belanja, diskon, kembalian, dan lihat laporan penjualan harian dalam satu halaman.</p>
+<a class="btn" href="#app">Mulai Catat Transaksi</a> <a class="btn alt" href="#fitur">Lihat Fitur</a>
+</div>
+
+<section id="fitur"><h2>Semua yang dibutuhkan toko Anda</h2>
+<div class="grid">
+<div class="card"><div class="ico">🧾</div><h3>Kasir Cepat</h3><p>Ketuk produk, total dan kembalian terhitung otomatis.</p></div>
+<div class="card"><div class="ico">🏷️</div><h3>Diskon & PPN</h3><p>Atur diskon persen dan PPN 11% hanya dengan satu klik.</p></div>
+<div class="card"><div class="ico">📒</div><h3>Riwayat Transaksi</h3><p>Setiap penjualan tersimpan lengkap dengan waktu dan rincian.</p></div>
+<div class="card"><div class="ico">📊</div><h3>Laporan Penjualan</h3><p>Omzet hari ini, rata-rata transaksi, dan produk terlaris.</p></div>
+</div></section>
+
+<section id="cara"><h2>Cara kerja</h2>
+<div class="grid steps">
+<div class="card"><h3>Tambah produk</h3><p>Masukkan nama dan harga barang yang Anda jual.</p></div>
+<div class="card"><h3>Catat penjualan</h3><p>Pilih produk, isi jumlah bayar, lalu simpan transaksi.</p></div>
+<div class="card"><h3>Pantau hasil</h3><p>Buka tab Laporan untuk melihat omzet dan produk terlaris.</p></div>
+</div></section>
+
+<div id="app">
+<h2>Aplikasi Kasir</h2>
+<div class="tabs"><button class="tab on" data-t="kasir">Kasir</button><button class="tab" data-t="riwayat">Riwayat</button><button class="tab" data-t="laporan">Laporan</button><button class="tab" data-t="produk">Produk</button></div>
+
+<div id="t-kasir" class="cols">
+<div><input id="q" placeholder="Cari produk..." style="margin-bottom:10px"><div class="prods" id="prods"></div></div>
+<div class="card">
+<b>Keranjang</b><div id="cart"></div>
+<div class="row"><label class="muted" style="width:90px">Diskon %</label><input id="disc" type="number" min="0" max="100" value="0"></div>
+<div class="row"><label class="muted"><input type="checkbox" id="ppn" style="width:auto"> PPN 11%</label></div>
+<div class="row sp"><span class="muted">Subtotal</span><span id="sub">Rp0</span></div>
+<div class="row sp"><span class="muted">Diskon</span><span id="dv">Rp0</span></div>
+<div class="row sp"><span class="muted">PPN</span><span id="pv">Rp0</span></div>
+<div class="row sp"><b>Total</b><span class="total" id="tot">Rp0</span></div>
+<div class="row"><label class="muted" style="width:90px">Bayar</label><input id="paid" type="number" min="0" placeholder="0"></div>
+<div class="row" id="quick"><button class="btn alt sm" data-q="pas">Uang pas</button><button class="btn alt sm" data-q="50000">50rb</button><button class="btn alt sm" data-q="100000">100rb</button></div>
+<div class="row sp"><span class="muted">Kembalian</span><b id="chg">Rp0</b></div>
+<div class="row"><button class="btn" id="pay" style="flex:1">Simpan Transaksi</button><button class="btn alt" id="clr">Kosongkan</button></div>
+<div class="muted" id="msg"></div>
+</div></div>
+
+<div id="t-riwayat" class="card hide"><div class="tw"><table><thead><tr><th>Waktu</th><th>Barang</th><th>Total</th><th>Bayar</th><th>Kembali</th><th></th></tr></thead><tbody id="hist"></tbody></table></div></div>
+
+<div id="t-laporan" class="hide"><div class="stats" id="stats"></div><div class="card"><b>Produk terlaris</b><div class="tw"><table><thead><tr><th>Produk</th><th>Terjual</th><th>Pendapatan</th></tr></thead><tbody id="top"></tbody></table></div></div>
+<p><button class="btn alt sm" id="reset">Hapus semua data transaksi</button></p></div>
+
+<div id="t-produk" class="card hide">
+<div class="row"><input id="pn" placeholder="Nama produk"><input id="pp" type="number" min="0" placeholder="Harga"><button class="btn" id="add">Tambah</button></div>
+<div id="plist"></div>
+</div>
+</div>
+</main>
+<footer>© 2026 TokoKu · Data tersimpan di browser Anda</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
